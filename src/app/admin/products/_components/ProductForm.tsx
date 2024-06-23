@@ -5,6 +5,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { formatCurrency } from "@/lib/formatters";
 import { useState } from "react";
+import { useFormStatus } from "react-dom";
 import { addProduct } from "../../_actions/products";
 
 export default function ProductForm() {
@@ -41,7 +42,16 @@ export default function ProductForm() {
         <Label htmlFor="image">Image</Label>
         <Input type="file" id="image" name="image" required />
       </div>
-      <Button type="submit">Save</Button>
+      <SubmitButton />
     </form>
+  );
+}
+
+function SubmitButton() {
+  const { pending } = useFormStatus();
+  return (
+    <Button type="submit" disabled={pending}>
+      {pending ? "Saving..." : "Save"}
+    </Button>
   );
 }
