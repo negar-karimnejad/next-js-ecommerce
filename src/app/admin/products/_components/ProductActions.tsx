@@ -5,7 +5,7 @@ import { useTransition } from "react";
 import {
   deleteProduct,
   toggleProductAvailability,
-} from "../../app/admin/_actions/products";
+} from "../../_actions/products";
 import { useRouter } from "next/navigation";
 
 export function ActiveToggleDropdownItem({
