@@ -64,6 +64,7 @@ export async function deleteProduct(id: string) {
   const product = await db.product.delete({ where: { id } });
   if (product === null) return notFound();
 
+  // delete file and images from file directory after delete product
   await fs.unlink(product.filePath);
   await fs.unlink(`public${product.imagePath}`);
 
