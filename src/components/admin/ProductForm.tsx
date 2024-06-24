@@ -8,7 +8,7 @@ import { Product } from "@prisma/client";
 import Image from "next/image";
 import { useState } from "react";
 import { useFormState, useFormStatus } from "react-dom";
-import { addProduct, updateProduct } from "../../_actions/products";
+import { addProduct, updateProduct } from "../../app/admin/_actions/products";
 
 export default function ProductForm({ product }: { product?: Product | null }) {
   const [error, action] = useFormState(

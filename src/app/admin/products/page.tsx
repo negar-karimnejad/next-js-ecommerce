@@ -18,11 +18,11 @@ import db from "@/db/db";
 import { formatCurrency, formatNumber } from "@/lib/formatters";
 import { CheckCircle2, MoreVertical, XCircle } from "lucide-react";
 import Link from "next/link";
-import PageHeader from "../_components/PageHeader";
+import PageHeader from "../../../components/admin/PageHeader";
 import {
   ActiveToggleDropdownItem,
   DeleteDropdownItem,
-} from "./_components/ProductActions";
+} from "../../../components/admin/ProductActions";
 
 export default function AdminProductsPage() {
   return (
